@@ -616,7 +616,16 @@ DigiNum:						; Espera que uma tecla seja digitada
 		load r5, Tentativas
 		loadn r6, #859
 		call PrintaNumero			; Imprimindo tentativas
-	
+		load r5, Num				; Imprimindo número sorteado
+		loadn r6, #953
+		loadn r0, #10
+		loadn r2, #48
+		div r1, r5, r0	; Divide o numero por 10 para imprimir a dezena
+		mul r1, r1, r0	; Multiplica a dezena por 10
+		sub r1, r5, r1	; Pra subtrair do numero e pegar o resto
+		add r1, r1, r2	; Soma 48 ao numero pra dar o Cod.  ASCII do numero
+		outchar r1, r6		
+		
 		restartLoop:
 			loadn r1, #'r'			; Se nao digitar nada vem 255
 			inchar r0
@@ -683,7 +692,7 @@ ImprimeTela: 	;  Rotina de Impresao de Cenario na Tela Inteira
 	loadn r3, #40  	; Incremento da posicao da tela!
 	loadn r4, #41  	; incremento do ponteiro das linhas da tela
 	loadn r5, #1200 ; Limite da tela!
-	
+
    ImprimeTela_Loop:
 		call ImprimeStr
 		add r0, r0, r3  		; incrementaposicao para a segunda linha na tela -->  r0 = R0 + 40
@@ -757,8 +766,8 @@ TelaInit20 : string "|                                      |"
 TelaInit21 : string "|                                      |"
 TelaInit22 : string "|                                      |"
 TelaInit23 : string "|                                      |"
-TelaInit24 : string "|        Press any key to start        |"
-TelaInit25 : string "|        _____ ___ ___ __ _____        |"
+TelaInit24 : string "|         Press any key to start       |"
+TelaInit25 : string "|         _____ ___ ___ __ _____       |"
 TelaInit26 : string "|                                      |"
 TelaInit27 : string "|                                      |"
 TelaInit28 : string "|                                      |"  
@@ -948,11 +957,11 @@ telaFim15 : string "|           @ @ @ @ @   @ @            |"
 telaFim16 : string "|           @@@  @  @@@ @ @ @          |"
 telaFim17 : string "|           ___ ___ ___ ___ _          |"
 telaFim18 : string "|                                      |"
-telaFim19 : string "|           You've attempted           |"
+telaFim19 : string "|             You've tried             |"
 telaFim20 : string "|                                      |"
 telaFim21 : string "|                                      |"
 telaFim22 : string "|                                      |"
-telaFim23 : string "|            times to guess            |"
+telaFim23 : string "|      times to guess the number       |"
 telaFim24 : string "|                                      |"
 telaFim25 : string "|       Press R Restart the Game       |"
 telaFim26 : string "|       _____ _ _______ ___ ____       |"
