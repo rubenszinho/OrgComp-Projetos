@@ -414,7 +414,7 @@ GeraNum:
 		
  	; Fim Switch:
   	GeraNum_FimSwitch:		
-  		call ImprimeTela		; Printa a Num
+  		call ImprimeTela		; Printa a primeira tela adivnheNum
 
   	GeraNum_Fim:
 		pop r6
@@ -501,7 +501,7 @@ DigiNum:						; Espera que uma tecla seja digitada
 			cmp r3, r1
 			jgr DigiNum_Errou_Mais  ; Se o número inserido for maior
 			jle DigiNum_Errou_Menos ; Se o número inserido for menor
-			jeq DigiNum_Acertou		; Se for igual
+			jeq DigiNum_Acertou		; Se for igual, termina o jogo
 
 		ComparaNum_1:
 			loadn r3, #1
