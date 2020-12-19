@@ -444,7 +444,7 @@ DigiNum:						; Espera que uma tecla seja digitada
 			jeq DigiNum_Loop	; Fica lendo ate' que digite uma tecla valida
 			load r1, Num        ; Numero aleatorio
 
-		DigiNum_0:				; Comparar o inchar com cada um dos numeros (como char) e mandar para sua respectiva funcao
+		DigiNum_0:				; Como o inchar lê os números na forma de char, preciso fazer uma conversão criando novas funcoes que leiam como inteiros para assim efetuar as operacoes
 			loadn r3, #'0'
 			cmp r3, r0 
 			jeq ComparaNum_0
@@ -643,7 +643,7 @@ DigiNum:						; Espera que uma tecla seja digitada
 
 ; Imprime um numero de 2 digitos na tela
 
-PrintaNumero:	; R5 contem um numero de ate' 2 digitos e R6 a posicao onde vai imprimir na tela
+PrintaNumero:		; R5 contem um numero de ate' 2 digitos e R6 a posicao onde vai imprimir na tela
 	push r0
 	push r1
 	push r2
@@ -686,9 +686,9 @@ ImprimeTela: 	;  Rotina de Impresao de Cenario na Tela Inteira
 	
    ImprimeTela_Loop:
 		call ImprimeStr
-		add r0, r0, r3  	; incrementaposicao para a segunda linha na tela -->  r0 = R0 + 40
-		add r1, r1, r4  	; incrementa o ponteiro para o comeco da proxima linha na memoria (40 + 1 porcausa do /0 !!) --> r1 = r1 + 41
-		cmp r0, r5			; Compara r0 com 1200
+		add r0, r0, r3  		; incrementaposicao para a segunda linha na tela -->  r0 = R0 + 40
+		add r1, r1, r4  		; incrementa o ponteiro para o comeco da proxima linha na memoria (40 + 1 porcausa do /0 !!) --> r1 = r1 + 41
+		cmp r0, r5				; Compara r0 com 1200
 		jne ImprimeTela_Loop	; Enquanto r0 < 1200
 
 	pop r5	; Resgata os valores dos registradores utilizados na Subrotina da Pilha
