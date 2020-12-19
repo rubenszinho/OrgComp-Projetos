@@ -3,7 +3,7 @@
 
     PROJETO 1 - FUNCAO NO MONTADOR - Push_all-Pop_all
     
-    PROJETO 2 - JOGO EM ASSEMBLY - Jogo-da-Memoria
+    PROJETO 2 - JOGO EM ASSEMBLY - GuessNum
 
     Feito por Grupo 5:
     *João Pedro Alonso Almeida, NUSP: 11832343
