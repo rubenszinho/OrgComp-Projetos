@@ -3,7 +3,7 @@
 
     PROJETO 1 - FUNCAO NO MONTADOR - Push_all-Pop_all
     
-    PROJETO 2 - JOGO EM ASSEMBLY - GuessNum
+    PROJETO 2 - JOGO EM ASSEMBLY - GuessIt
 
     Feito por Grupo 5:
     *João Pedro Alonso Almeida, NUSP: 11832343
