@@ -414,7 +414,7 @@ GeraNum:
 		
  	; Fim Switch:
   	GeraNum_FimSwitch:		
-  		call ImprimeTela		; Printa a Num
+  		call ImprimeTela		; Printa a primeira tela adivnheNum
 
   	GeraNum_Fim:
 		pop r6
@@ -501,7 +501,7 @@ DigiNum:						; Espera que uma tecla seja digitada
 			cmp r3, r1
 			jgr DigiNum_Errou_Mais  ; Se o número inserido for maior
 			jle DigiNum_Errou_Menos ; Se o número inserido for menor
-			jeq DigiNum_Acertou		; Se for igual
+			jeq DigiNum_Acertou		; Se for igual, termina o jogo
 
 		ComparaNum_1:
 			loadn r3, #1
@@ -746,17 +746,17 @@ TelaInit0  : string "|======================================|"
 TelaInit1  : string "|                                      |"
 TelaInit2  : string "|                                      |"
 TelaInit3  : string "|                                      |"
-TelaInit4  : string "|          @@@ @ @ @@@ @@@ @@@         |"
-TelaInit5  : string "|          @   @ @ @   @   @           |"
-TelaInit6  : string "|          @@@ @ @ @@@ @@@ @@@         |"
-TelaInit7  : string "|          @ @ @ @ @     @   @         |"
-TelaInit8  : string "|          @@@ @@@ @@@ @@@ @@@         |"
+TelaInit4  : string "|         @@@ @ @ @@@ @@@ @@@          |"
+TelaInit5  : string "|         @   @ @ @   @   @            |"
+TelaInit6  : string "|         @@@ @ @ @@@ @@@ @@@          |"
+TelaInit7  : string "|         @ @ @ @ @     @   @          |"
+TelaInit8  : string "|         @@@ @@@ @@@ @@@ @@@          |"
 TelaInit9  : string "|                                      |"
-TelaInit10 : string "|               @@@ @@@ @              |"
-TelaInit11 : string "|                @   @  @              |"
-TelaInit12 : string "|                @   @  @              |"
-TelaInit13 : string "|                @   @                 |"
-TelaInit14 : string "|               @@@  @  @              |"
+TelaInit10 : string "|              @@@ @@@ @               |"
+TelaInit11 : string "|               @   @  @               |"
+TelaInit12 : string "|               @   @  @               |"
+TelaInit13 : string "|               @   @                  |"
+TelaInit14 : string "|              @@@  @  @               |"
 TelaInit15 : string "|                                      |"
 TelaInit16 : string "|                                      |"
 TelaInit17 : string "|                                      |"
@@ -766,8 +766,8 @@ TelaInit20 : string "|                                      |"
 TelaInit21 : string "|                                      |"
 TelaInit22 : string "|                                      |"
 TelaInit23 : string "|                                      |"
-TelaInit24 : string "|         Press any key to start       |"
-TelaInit25 : string "|         _____ ___ ___ __ _____       |"
+TelaInit24 : string "|        Press any key to start        |"
+TelaInit25 : string "|        _____ ___ ___ __ _____        |"
 TelaInit26 : string "|                                      |"
 TelaInit27 : string "|                                      |"
 TelaInit28 : string "|                                      |"  
