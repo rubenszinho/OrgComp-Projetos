@@ -593,16 +593,10 @@ DigiNum:						; Espera que uma tecla seja digitada
 		jmp DigiNum
 
 	Entrada_Invalida:
-		load r3, Tentativas			; Incrementa o contador de Tentativas
-		inc r3
-		store Tentativas, r3
 		loadn r0, #0				; Posicao na tela onde a mensagem sera' escrita
 		loadn r1, #invalidInput0	; Carrega r1 com o endereco do vetor que contem a mensagem
 		loadn r2, #1280				; Seleciona a COR da Mensagem
 		call ImprimeTela
-		load r5, Tentativas
-		loadn r6, #615
-		call PrintaNumero			; Imprimindo tentativas
 		jmp DigiNum		
 
 	DigiNum_Acertou:
@@ -799,8 +793,8 @@ TelaReg20 : string "|                                      |"
 TelaReg21 : string "|                                      |"
 TelaReg22 : string "|                                      |"
 TelaReg23 : string "|                                      |"
-TelaReg24 : string "|         Press any key to play!       |"
-TelaReg25 : string "|         _____ ___ ___ __ _____       |"
+TelaReg24 : string "|        Press any key to play!        |"
+TelaReg25 : string "|        _____ ___ ___ __ _____        |"
 TelaReg26 : string "|                                      |"
 TelaReg27 : string "|                                      |"
 TelaReg28 : string "|                                      |"
@@ -919,9 +913,9 @@ invalidInput9  : string "                                        "
 invalidInput10 : string "                                        "
 invalidInput11 : string "                                        "
 invalidInput12 : string "                                        "
-invalidInput13 : string "        INVALID INPUT TRY AGAIN !       "
-invalidInput14 : string "                                        "
-invalidInput15 : string "                   GUESSES !            "
+invalidInput13 : string "                                        "
+invalidInput14 : string "       INVALID INPUT, TRY AGAIN !       "
+invalidInput15 : string "                                        "
 invalidInput16 : string "                                        "
 invalidInput17 : string "                                        "
 invalidInput18 : string "                                        "
